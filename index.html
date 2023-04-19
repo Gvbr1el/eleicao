@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eleição</title>
+</head>
+<body>
+    <script>
+        var voto = "";
+        var candidatoA = 0;
+        var candidatoB = 0;
+        var candidatoC = 0;
+
+        function votoEleicao(){
+
+            for(var i = 0; i < 10; i++){
+                voto = prompt("Qual o seu voto A, B ou C?").toLowerCase();
+                
+                if(voto === "a"){
+                    candidatoA ++;
+                }
+                else if(voto === "b"){
+                    candidatoB ++;
+                }
+                else if(voto === "c"){
+                    candidatoC ++;
+                }
+                else{
+                    alert("Esse candidato não existe!")
+                }
+            }
+
+            apuracaoVotos();
+
+        }
+        
+        votoEleicao();
+
+        function apuracaoVotos(){
+
+            if(candidatoA > candidatoB && candidatoA > candidatoC){
+                alert("Candidato A é o campeão");
+                
+                if(candidatoB > candidatoC){
+                    alert("O candidato B é o vice!");
+                    alert("O candidato C é o terceiro lugar!");
+                }
+                else if(candidatoC > candidatoB){
+                    alert("O candidato C é o vice!");
+                    alert("O candidato B é o terceiro lugar!");
+                }
+                else if(candidatoB = candidatoC){
+                    alert("Os candidatos B e C empataram na segunda posição");
+                }
+            }
+            else if(candidatoB > candidatoA && candidatoB > candidatoC){
+                alert("Candidato B é o campeão");
+                
+                if(candidatoA > candidatoC){
+                    alert("O candidato A é o vice!");
+                    alert("O candidato C é o terceiro lugar!");
+                }
+                else if(candidatoC > candidatoA){
+                    alert("O candidato C é o vice!");
+                    alert("O candidato A é o terceiro lugar!");
+                }
+                else if(candidatoA = candidatoC){
+                    alert("Os candidatos A e C empataram na segunda posição");
+                }
+            }
+            else if(candidatoC > candidatoA && candidatoC > candidatoA){
+                alert("Candidato C é o campeão");
+                
+                if(candidatoA > candidatoB){
+                    alert("O candidato A é o vice!");
+                    alert("O candidato B é o terceiro lugar!");
+                }
+                else if(candidatoB > candidatoA){
+                    alert("O candidato B é o vice!");
+                    alert("O candidato A é o terceiro lugar!");
+                }
+                else if(candidatoA = candidatoB){
+                    alert("Os candidatos A e B empataram na segunda posição");
+                }
+            }        
+        }
+        </script>
+</body>
+</html>
